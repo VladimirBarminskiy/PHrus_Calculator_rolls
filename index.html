@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PH Rus</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <!-- Created by Vladimir Barminskiy -->
+    <div class="container" id="app">
+      <p>Created by Vladimir Barminskiy</p>
+      <div class="block">
+        <h3>Космопор Е</h3>
+        <div class="boxInOut">
+          <div class="boxIn">
+            <select class="slc" v-model="inSelectCos">
+              <option value="Нетканка">Нетканка</option>
+              <option value="Подушка">Подушка</option>
+              <option value="Накладка">Накладка</option>
+              <option value="БумагаИУ">Бумага ИУ</option>
+              <option value="ПленкаИУ">Пленка ИУ</option>
+            </select>
+            <input
+              size="15"
+              type="number"
+              v-bind:placeholder="placehldrIn"
+              v-model="inCosRadius"
+              v-on:keypress.enter="functionCalcCos"
+            />
+          </div>
+          <div class="boxOut">
+            <p>Длина, (м)</p>
+            <input
+              size="15"
+              type="text"
+              v-bind:placeholder="placehldrOutLength"
+              v-bind:value="outCosLength"
+            />
+            <p>Масса, (кг)</p>
+            <input
+              size="15"
+              type="text"
+              v-bind:placeholder="placehldrOutWeight"
+              v-bind:value="outCosWeight"
+            />
+          </div>
+        </div>
+        <div class="boxButton">
+          <button class="btn primary" v-on:click="functionCalcCos">
+            Подсчет
+          </button>
+          <button class="btn danger" v-on:click="functionCalcCosReset">
+            Сброс
+          </button>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Бранолинд Н</h3>
+        <div class="boxInOut">
+          <div class="boxIn">
+            <select class="slc" v-model="inSelectBr">
+              <option value="Сеточка">Сеточка</option>
+              <option value="НакладкаВерх">Накладка верх</option>
+              <option value="НакладкаНиз">Накладка низ</option>
+              <option value="ИУВерх">ИУ верх</option>
+              <option value="ИУНиз">ИУ низ</option>
+            </select>
+            <input
+              size="15"
+              type="number"
+              v-bind:placeholder="placehldrIn"
+              required
+              v-model="inBrRadius"
+              v-on:keypress.enter="functionCalcBr"
+            />
+          </div>
+          <div class="boxOut">
+            <p>Длина, (м)</p>
+            <input
+              size="15"
+              type="text"
+              v-bind:placeholder="placehldrOutLength"
+              v-bind:value="outBrLength"
+            />
+            <p>Масса, (кг)</p>
+            <input
+              size="15"
+              type="text"
+              v-bind:placeholder="placehldrOutWeight"
+              v-bind:value="outBrWeight"
+            />
+          </div>
+        </div>
+        <div class="boxButton">
+          <button class="btn primary" v-on:click="functionCalcBr">
+            Подсчет
+          </button>
+          <button class="btn danger" v-on:click="functionCalcBrReset">
+            Сброс
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
